@@ -11,4 +11,4 @@ after_success:
    - mvn test
 notifications:
    email: false
-   irc: "chat.freenode.net#test-irc"
+   #irc: "chat.freenode.net#test-irc"
