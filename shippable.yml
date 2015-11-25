@@ -5,6 +5,18 @@ jdk:
    - openjdk6
    - openjdk7
    - oraclejdk8
+   
+env:
+   - foo=testbeta
+   
+matrix:
+  allow_failures:
+    - jdk: "openjdk6"
+  exclude:
+    - jdk: "openjdk7"
+  include:
+    - jdk: "oraclejdk8"
+      env: ship=beta
 
 after_success:
    - mvn clean cobertura:cobertura
