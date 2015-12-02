@@ -6,24 +6,31 @@ jdk:
    - openjdk7
    - oraclejdk8
    
-env:
-   - foo=testbeta
-   - secure: BIe90wZ3w/1u6S9/HitQ4cnT8mT4zX/1Gp8Ojgv3agFUwzLbdZbJrSkdrTLfK75fBJeQDV/2jBdpTLVHoMXUEtlMMB+p9uciIi31RDqHfJKA6cXDQNXiANR7C+iGuOLmPiVOrtoUKw4hUSLXnm/TeTu1yMW2kMLdu232BVZEnUO5yYp0FCCJKSdZN8aw03v7XLZLgtiw5PYsSNewrrQyKn/yHDHX+PPiGPbRWoeZaeE7qm/Mb36aP98mvZ+lk5kozdRfHNN1qEDPRUHnEUZPt7SifSk/gEH5aYZBI0by/qK6DceoOywB/6JmrPIt/YQFoiUU2DU/6iWKIpGuPP7hVw==
+#env:
+ #  - foo=testbeta
+  # - secure: BIe90wZ3w/1u6S9/HitQ4cnT8mT4zX/1Gp8Ojgv3agFUwzLbdZbJrSkdrTLfK75fBJeQDV/2jBdpTLVHoMXUEtlMMB+p9uciIi31RDqHfJKA6cXDQNXiANR7C+iGuOLmPiVOrtoUKw4hUSLXnm/TeTu1yMW2kMLdu232BVZEnUO5yYp0FCCJKSdZN8aw03v7XLZLgtiw5PYsSNewrrQyKn/yHDHX+PPiGPbRWoeZaeE7qm/Mb36aP98mvZ+lk5kozdRfHNN1qEDPRUHnEUZPt7SifSk/gEH5aYZBI0by/qK6DceoOywB/6JmrPIt/YQFoiUU2DU/6iWKIpGuPP7hVw==
    
    
-matrix:
-  allow_failures:
-    - jdk: "openjdk6"
-  exclude:
-    - jdk: "openjdk7"
-    - jdk: "oraclejdk7"
-  include:
-    - jdk: "oraclejdk8"
-      env: ship=beta
+#matrix:
+ # allow_failures:
+  #  - jdk: "openjdk6"
+  #exclude:
+#    - jdk: "openjdk7"
+ #   - jdk: "oraclejdk7"
+  #include:
+   # - jdk: "oraclejdk8"
+    #  env: ship=beta
 
 after_success:
    - mvn clean cobertura:cobertura
    - mvn test
 notifications:
-  email: false
+   email: 
+      test.accsyncghbb@gmail.com
+   irc:
+      pull_request: true
+      channels: 
+         - "chat.freenode.net#test-irc"
+      
+
 
